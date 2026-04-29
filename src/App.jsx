@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { supabase } from './supabaseClient';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';  
@@ -9,6 +10,9 @@ import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Verification from './pages/Verification';
 import Login from './pages/Login';
+
+import About from './pages/About';
+import Courses from './pages/Courses';
 
 function App() {
   const [session, setSession] = useState(null);
@@ -38,6 +42,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/verify/:code" element={<Verification />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/courses" element={<Courses />} />
             
             <Route 
               path="/admin" 
